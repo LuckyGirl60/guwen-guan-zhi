@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "mediaId": "cao-gui-intro-video",
+      "licenseStatus": "awaiting_license",
+      "source": "",
+      "reviewedAt": null,
+      "notes": "不得使用机构课程截图、视频或讲义作为正式素材。"
+    },
+    {
+      "mediaId": "cao-gui-reading-audio",
+      "licenseStatus": "browser_tts_fallback",
+      "source": "浏览器 SpeechSynthesis",
+      "reviewedAt": "2026-10-26",
+      "notes": "合成语音不标记为真人朗读。"
+    }
+  ]
+}

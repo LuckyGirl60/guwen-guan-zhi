@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="古文观止文章目录：按时代、年级和难度选择精读文章" />
+    <title>古文观止 · 文章目录</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./library.html">古文精读<span>／把文章读回它发生的时代</span></a>
+        <div class="header-actions"><span class="privacy-note">独立应用 · 内容持续校对</span></div>
+      </header>
+      <main>
+        <section class="library-hero">
+          <p class="eyebrow">古文观止 · 文章目录</p>
+          <h1>先选一篇，再把它读懂</h1>
+          <p>每篇文章都按原文、分句、字词、翻译、历史和写法组织。目录是入口，精读页才是学习主场。</p>
+        </section>
+        <section class="library-toolbar"><label class="library-search"><span aria-hidden="true">⌕</span><input id="article-search" type="search" placeholder="搜索文章、出处或时代" /></label><div id="article-count" class="library-count">加载中…</div></section>
+        <section id="article-grid" class="article-grid" aria-live="polite"></section>
+        <p id="library-empty" class="empty-state" hidden>没有匹配的文章，换一个关键词试试。</p>
+      </main>
+      <footer>内容状态会随人工校对更新；未获授权的视频和真人音频不会直接发布。</footer>
+    </div>
+    <script type="module" src="./library.js"></script>
+  </body>
+</html>

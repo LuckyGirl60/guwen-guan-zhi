@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="古文文章精读：原文、朗读、翻译、字词与历史讲解" />
+    <title>古文精读 · 曹刿论战</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./library.html">古文精读<span>／把文章读回它发生的时代</span></a>
+        <div class="header-actions"><span class="privacy-note">学习进度仅保存在本机</span><button class="ghost-button" id="reset-progress">重置本篇</button></div>
+      </header>
+
+      <main>
+        <section class="article-hero">
+          <div class="hero-copy">
+            <p class="eyebrow">《左传》 · 春秋 · 叙事与劝谏</p>
+            <h1>曹刿论战</h1>
+            <p class="lead">一场战争，为什么要等到“民弗从也”才出手？跟着曹刿，看懂鲁国取胜背后的判断。</p>
+            <div class="hero-tags"><span>七至九年级</span><span>约 15 分钟</span><span>精读 5 句</span></div>
+          </div>
+          <div class="progress-card"><div class="progress-ring" id="progress-ring"><strong id="progress-percent">0%</strong></div><div><b>本篇进度</b><p id="progress-copy">先选一句原文开始学习</p></div></div>
+        </section>
+
+        <section class="context-strip"><div><b>先知道</b><span>齐国攻打鲁国，曹刿请求面见鲁庄公，讨论凭什么迎战。</span></div><div><b>阅读目标</b><span>读懂“民本”判断，理解叙事如何推动论点。</span></div></section>
+
+        <div class="content-grid">
+          <article class="reading-card">
+            <div class="section-heading"><div><p class="eyebrow">逐句精读</p><h2>原文 · 听一遍，再读一遍</h2></div><div class="read-controls"><button class="primary-button" id="read-all">▶ 全文朗读</button><button class="secondary-button" id="read-current">🔊 当前句</button><label>速度 <select id="speech-rate"><option value="0.85">慢</option><option value="1" selected>标准</option><option value="1.15">稍快</option></select></label></div></div>
+            <div class="sentence-visual" id="sentence-visual" aria-live="polite"></div>
+            <div class="sentence-list" id="sentence-list" aria-live="polite"></div>
+            <div class="reading-tip">点击句子切换讲解；朗读使用浏览器中文合成语音，设备没有中文音色时会自动降级。</div>
+          </article>
+
+          <aside class="lesson-rail">
+            <section class="video-card"><div class="video-placeholder"><span class="video-icon">▶</span><b>视频讲解位</b><small>接入获得授权的讲解视频后，可在这里播放</small></div><div class="video-meta"><span>建议 6–8 分钟</span><span>人物 · 时代 · 写法</span></div></section>
+            <section class="detail-card"><div class="detail-title"><div><p class="eyebrow">当前句讲解</p><h2 id="detail-title">选择一句开始</h2></div><span class="sentence-index" id="detail-index">—</span></div><div class="tabs" role="tablist"><button class="tab active" data-tab="translation" role="tab">白话</button><button class="tab" data-tab="words" role="tab">字词</button><button class="tab" data-tab="insight" role="tab">讲解</button></div><div id="detail-panel" class="detail-panel"><p>从左侧选择一句原文，这里会显示对应的翻译、重点字词和历史写法。</p></div><button class="understand-button" id="mark-understood" disabled>✓ 标记这句已理解</button></section>
+          </aside>
+        </div>
+
+        <section class="method-card"><div><p class="eyebrow">读法建议</p><h2>把一篇古文读成三个问题</h2></div><ol><li><b>谁在做决定？</b><span>先抓人物和行动，不急着背译文。</span></li><li><b>他凭什么判断？</b><span>找出原文中的证据和转折。</span></li><li><b>作者怎么写？</b><span>观察对话、节奏和前后照应。</span></li></ol></section>
+      </main>
+      <footer>内容为自建学习示例；原文属于古籍公共领域，讲解与音视频素材需自行校对并确认授权。</footer>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

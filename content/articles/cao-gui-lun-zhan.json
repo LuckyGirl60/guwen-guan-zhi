@@ -1,0 +1,25 @@
+{
+  "id": "zuo-zhuan-cao-gui-lun-zhan",
+  "slug": "cao-gui-lun-zhan",
+  "title": "曹刿论战",
+  "sourceWork": "《左传》",
+  "author": "左丘明（传统署名）",
+  "era": "春秋",
+  "edition": "原型校读稿 v0.1",
+  "grades": ["七至九年级"],
+  "difficulty": "入门",
+  "readingGoal": "读懂“民本”判断，理解叙事如何推动论点。",
+  "context": "齐国攻打鲁国，曹刿请求面见鲁庄公，讨论凭什么迎战。",
+  "sentences": [
+    { "id": "cao-gui-001", "text": "十年春，齐师伐我。", "hint": "战争从哪里开始？", "translation": "鲁庄公十年的春天，齐国军队攻打鲁国。", "words": [["十年", "鲁庄公十年。"], ["师", "军队。"], ["伐", "攻打。"]], "insight": "开篇先交代时间和冲突，只有八个字，却把鲁国置于危急现场。", "visualPath": "./content/illustrations/cao-gui-lun-zhan-001.svg", "visualAlt": "齐军攻打鲁国的春日战场" },
+    { "id": "cao-gui-002", "text": "公将战，曹刿请见。", "hint": "谁主动走进决策现场？", "translation": "鲁庄公准备迎战，曹刿请求接见。", "words": [["公", "指鲁庄公。"], ["将", "将要，准备。"], ["请见", "请求拜见。"]], "insight": "“将战”与“请见”形成动作接力：国家将要作战，民间的判断者进入朝堂。", "visualPath": "./content/illustrations/cao-gui-lun-zhan-002.svg", "visualAlt": "曹刿走进宫门请求拜见鲁庄公" },
+    { "id": "cao-gui-003", "text": "其乡人曰：“肉食者鄙，未能远谋。”", "hint": "乡人为什么劝他不要去？", "translation": "他的同乡说：“掌权的人目光短浅，不能作长远谋划。”", "words": [["乡人", "同乡。"], ["肉食者", "吃肉的人，指当权者。"], ["鄙", "浅陋，这里指目光短浅。"]], "insight": "“肉食者鄙”是全篇的判断伏笔。曹刿不接受这句劝阻，说明他相信自己能看见更远的战局。", "visualPath": "./content/illustrations/cao-gui-lun-zhan-003.svg", "visualAlt": "乡人在村口劝曹刿不要入宫" },
+    { "id": "cao-gui-004", "text": "乃入见，问：“何以战？”", "hint": "曹刿先问什么？", "translation": "于是曹刿进宫拜见鲁庄公，问道：“您凭什么作战？”", "words": [["乃", "于是，就。"], ["入见", "进宫拜见。"], ["何以", "凭什么。以，凭、靠。"]], "insight": "“何以战”不是问武器多少，而是追问战争的正当依据，直接把讨论引向民心与政治。", "visualPath": "./content/illustrations/cao-gui-lun-zhan-004.svg", "visualAlt": "曹刿在宫中追问凭什么作战" },
+    { "id": "cao-gui-005", "text": "小大之狱，虽不能察，必以情。", "hint": "鲁庄公给出的承诺可靠吗？", "translation": "大大小小的诉讼案件，即使不能一一明察，也一定根据实情处理。", "words": [["狱", "案件，不是监狱。"], ["虽", "即使。"], ["察", "明察，弄清楚。"], ["以情", "根据实情。"]], "insight": "曹刿认可的不是“祭品”和“玉帛”，而是“必以情”背后的公平。文章把取胜的根基落在民心上。", "visualPath": "./content/illustrations/cao-gui-lun-zhan-005.svg", "visualAlt": "鲁庄公承诺按实情审理案件" }
+  ],
+  "mediaRefs": [
+    { "mediaId": "cao-gui-intro-video", "kind": "video", "status": "awaiting_license", "url": "", "source": "待接入授权视频" },
+    { "mediaId": "cao-gui-reading-audio", "kind": "audio", "status": "browser_tts_fallback", "url": "", "source": "浏览器 SpeechSynthesis 降级" }
+  ],
+  "contentStatus": "prototype_needs_editorial_review"
+}

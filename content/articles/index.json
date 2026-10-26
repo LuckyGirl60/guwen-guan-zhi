@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "id": "zuo-zhuan-cao-gui-lun-zhan",
+      "slug": "cao-gui-lun-zhan",
+      "title": "曹刿论战",
+      "sourceWork": "《左传》",
+      "era": "春秋",
+      "grades": ["七至九年级"],
+      "difficulty": "入门",
+      "summary": "从“何以战”读懂战争判断与民心。",
+      "contentPath": "./cao-gui-lun-zhan.json",
+      "status": "prototype_needs_editorial_review"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "guwen-guan-zhi",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "content:check": "node scripts/validate-content.mjs",
+    "serve": "python -m http.server 4174"
+  }
+}
