@@ -35,3 +35,20 @@
 - 增加第二篇人工校对文章，验证多文章进度隔离。
 - 增加逐句字幕、授权真人朗读和视频加载失败状态。
 - 通过内容校验后再扩充到 12–20 篇文章。
+
+## 2026-10-26：单篇媒体生成预览
+
+- 新增 `scripts/generate-media.mjs`、`scripts/render-cards.py`、`scripts/generate-tts.ps1` 和 `npm run media:generate`。
+- 从《曹刿论战》JSON 生成 5 张 PNG 学习卡、5 段 Windows System.Speech WAV、WebVTT 字幕和 25 秒 H.264/AAC MP4。
+- 文章页已接入原型视频；视频、旁白和配乐明确标记为 `prototype_only`，授权清单已登记。
+- 原型媒体位于 `content/generated/cao-gui-lun-zhan/`，GitHub 只保存可复现脚本和本轮小型验收产物；正式发布前需替换合成语音、程序占位配乐和未经人工复核的画面。
+- 验证：`node --check app.js`、`node --check scripts/generate-media.mjs`、`python -m py_compile scripts/render-cards.py`、`npm run content:check`、`npm run media:generate`、`ffprobe` 均通过。
+
+## 2026-10-26：逐句媒体播放收尾与发布前验证
+
+- 文章 JSON 为 5 个句子登记逐句 `audioPath`；文章页优先播放生成 WAV，失败回退浏览器 SpeechSynthesis；全文朗读会随音频完成切换当前句高亮。
+- 视频播放器支持可选 WebVTT 字幕，并在 `error`/`stalled` 时提示用户继续使用逐句图片和朗读。
+- `generate-media.mjs` 按实际 WAV 时长生成画面/字幕时间轴；合成结束自动删除 `video-concat.txt`、`narration-concat.txt` 和 `padded-*.wav` 中间文件。
+- 新增 `scripts/validate-media.mjs` 与 `npm run media:check`；已验证 5 张图片、5 段音频、5 条字幕、约 25.579 秒 MP4，时间轴无重叠。
+- 当前工作区尚未提交本轮修改，也尚未推送或重新部署；正式素材仍标记 `prototype_only`，不能称为真人朗读或授权课程素材。
+- 下一步：提交并推送 `fix: align media timeline and playback fallback`，部署 Cloudflare Pages `guwen-guan-zhi`，验收正式域名 `https://guwen.luckyhyp.com` 的 MIME、Range、字幕和视频控件。

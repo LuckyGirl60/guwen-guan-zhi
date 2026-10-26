@@ -1,0 +1,24 @@
+{
+  "article": "cao-gui-lun-zhan",
+  "generatedAt": "2026-10-26T02:51:14.131Z",
+  "status": "prototype_only",
+  "rights": "generated_locally; replace with reviewed and licensed media before public release",
+  "images": [
+    "cards/sentence-001.png",
+    "cards/sentence-002.png",
+    "cards/sentence-003.png",
+    "cards/sentence-004.png",
+    "cards/sentence-005.png"
+  ],
+  "audio": [
+    "audio/sentence-001.wav",
+    "audio/sentence-002.wav",
+    "audio/sentence-003.wav",
+    "audio/sentence-004.wav",
+    "audio/sentence-005.wav"
+  ],
+  "subtitles": "subtitles.vtt",
+  "narration": "synthetic_tts",
+  "video": "lesson-preview.mp4",
+  "music": "procedural_placeholder"
+}

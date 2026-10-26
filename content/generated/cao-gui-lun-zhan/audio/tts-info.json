@@ -1,0 +1,32 @@
+﻿{
+    "provider":  "Windows System.Speech",
+    "voice":  "Microsoft Huihui Desktop",
+    "status":  "prototype_only",
+    "files":  [
+                  {
+                      "sentenceId":  "cao-gui-001",
+                      "path":  "sentence-001.wav",
+                      "status":  "synthetic_tts"
+                  },
+                  {
+                      "sentenceId":  "cao-gui-002",
+                      "path":  "sentence-002.wav",
+                      "status":  "synthetic_tts"
+                  },
+                  {
+                      "sentenceId":  "cao-gui-003",
+                      "path":  "sentence-003.wav",
+                      "status":  "synthetic_tts"
+                  },
+                  {
+                      "sentenceId":  "cao-gui-004",
+                      "path":  "sentence-004.wav",
+                      "status":  "synthetic_tts"
+                  },
+                  {
+                      "sentenceId":  "cao-gui-005",
+                      "path":  "sentence-005.wav",
+                      "status":  "synthetic_tts"
+                  }
+              ]
+}

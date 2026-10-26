@@ -2,7 +2,7 @@ const articleSlug = new URLSearchParams(window.location.search).get('article') |
 const ARTICLE_URL = './content/articles/' + articleSlug + '.json';
 const STORAGE_KEY = 'guwen-guan-zhi:progress:' + articleSlug;
 let article = null;
-const state = { selectedId: 'cao-gui-001', tab: 'translation', done: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')) };
+const state = { selectedId: 'cao-gui-001', tab: 'translation', done: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')), audio: null };
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) => String(value).replace(/[&<>\"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[char]));
 
@@ -13,6 +13,21 @@ function currentSentence() {
 function renderVisual() {
   const item = currentSentence();
   $('#sentence-visual').innerHTML = '<div class="visual-art"><img src="' + escapeHtml(item.visualPath || '') + '" alt="' + escapeHtml(item.visualAlt || '本句学习插图') + '"></div><div class="visual-caption"><span class="eyebrow">本句画面</span><strong>' + escapeHtml(item.text) + '</strong><p>' + escapeHtml(item.hint) + '</p></div>';
+}
+
+function renderVideo() {
+  const item = article.mediaRefs?.find((media) => media.kind === 'video' && media.url);
+  const slot = $('#video-slot');
+  if (!item) return;
+  const caption = item.status === 'prototype_generated' ? '原型预览：系统合成旁白与程序占位配乐；正式课程需替换为人工校对且已获授权的媒体。' : '授权视频：内容来源与使用范围已登记。';
+  const track = item.subtitleUrl ? '<track kind="subtitles" srclang="zh" label="中文" src="' + escapeHtml(item.subtitleUrl) + '">' : '';
+  slot.className = 'video-player';
+  slot.innerHTML = '<video controls preload="metadata" poster="' + escapeHtml(item.poster || '') + '"><source src="' + escapeHtml(item.url) + '" type="video/mp4">' + track + '</video><small class="video-caption">' + caption + '</small>';
+  const video = slot.querySelector('video');
+  const status = slot.querySelector('.video-caption');
+  const showFailure = () => { status.textContent = '视频暂时无法加载，请检查网络或稍后重试；逐句图片和浏览器朗读仍可继续使用。'; };
+  video.addEventListener('error', showFailure);
+  video.addEventListener('stalled', showFailure);
 }
 
 function renderSentences() {
@@ -50,22 +65,44 @@ function speak(text) {
   window.speechSynthesis.speak(utterance);
 }
 
-function speakSentence(index) {
-  const item = article.sentences[index];
-  if (!item) return;
-  window.speechSynthesis.cancel();
-  state.selectedId = item.id;
-  state.tab = 'translation';
-  renderSentences(); renderDetail();
-  const utterance = new SpeechSynthesisUtterance(item.text);
+function stopReading() {
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  if (state.audio) { state.audio.pause(); state.audio.currentTime = 0; state.audio = null; }
+}
+
+function speakWithBrowser(text, onend) {
+  if (!('speechSynthesis' in window)) { window.alert('当前浏览器不支持中文朗读，请换用新版 Chrome、Edge 或 Safari。'); return; }
+  const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'zh-CN';
   utterance.rate = Number($('#speech-rate').value);
+  utterance.onend = onend;
   window.speechSynthesis.speak(utterance);
 }
 
+function playSentence(item, onend) {
+  if (item.audioPath) {
+    const audio = new Audio(item.audioPath);
+    state.audio = audio;
+    audio.onended = () => { state.audio = null; onend?.(); };
+    audio.onerror = () => { state.audio = null; speakWithBrowser(item.text, onend); };
+    audio.play().catch(() => { state.audio = null; speakWithBrowser(item.text, onend); });
+    return;
+  }
+  speakWithBrowser(item.text, onend);
+}
+
+function speakSentence(index) {
+  const item = article.sentences[index];
+  if (!item) return;
+  stopReading();
+  state.selectedId = item.id;
+  state.tab = 'translation';
+  renderSentences(); renderDetail();
+  playSentence(item);
+}
+
 function speakAll() {
-  if (!('speechSynthesis' in window)) { window.alert('当前浏览器不支持中文朗读，请换用新版 Chrome、Edge 或 Safari。'); return; }
-  window.speechSynthesis.cancel();
+  stopReading();
   let index = 0;
   const playNext = () => {
     if (index >= article.sentences.length) return;
@@ -73,11 +110,7 @@ function speakAll() {
     state.selectedId = item.id;
     state.tab = 'translation';
     renderSentences(); renderDetail();
-    const utterance = new SpeechSynthesisUtterance(item.text);
-    utterance.lang = 'zh-CN';
-    utterance.rate = Number($('#speech-rate').value);
-    utterance.onend = () => { index += 1; playNext(); };
-    window.speechSynthesis.speak(utterance);
+    playSentence(item, () => { index += 1; playNext(); });
   };
   playNext();
 }
@@ -106,6 +139,7 @@ async function init() {
     article = await response.json();
     document.title = '古文精读 · ' + article.title;
     bindEvents();
+    renderVideo();
     renderSentences(); renderDetail(); updateProgress();
   } catch (error) {
     $('#sentence-list').innerHTML = '<p class="empty-state">文章内容暂时无法加载，请检查内容文件和静态服务器。</p>';

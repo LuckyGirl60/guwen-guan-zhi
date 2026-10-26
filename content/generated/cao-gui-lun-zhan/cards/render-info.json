@@ -1,0 +1,35 @@
+{
+  "renderer": "Pillow",
+  "cards": [
+    {
+      "sentenceId": "cao-gui-001",
+      "path": "sentence-001.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "sentenceId": "cao-gui-002",
+      "path": "sentence-002.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "sentenceId": "cao-gui-003",
+      "path": "sentence-003.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "sentenceId": "cao-gui-004",
+      "path": "sentence-004.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "sentenceId": "cao-gui-005",
+      "path": "sentence-005.png",
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

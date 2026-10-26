@@ -1,0 +1,61 @@
+{
+  "article": "cao-gui-lun-zhan",
+  "status": "prototype",
+  "scenes": [
+    {
+      "index": 1,
+      "sentenceId": "cao-gui-001",
+      "text": "十年春，齐师伐我。",
+      "translation": "鲁庄公十年的春天，齐国军队攻打鲁国。",
+      "visualPrompt": "中国古代历史学习插图，齐军攻打鲁国的春日战场，水墨与暖色纸张质感，画面不生成文字，适合七至九年级学生，16:9",
+      "durationSeconds": 5,
+      "spokenSeconds": 3.3183673469387753,
+      "image": "cards/sentence-001.png",
+      "audio": "audio/sentence-001.wav"
+    },
+    {
+      "index": 2,
+      "sentenceId": "cao-gui-002",
+      "text": "公将战，曹刿请见。",
+      "translation": "鲁庄公准备迎战，曹刿请求接见。",
+      "visualPrompt": "中国古代历史学习插图，曹刿走进宫门请求拜见鲁庄公，水墨与暖色纸张质感，画面不生成文字，适合七至九年级学生，16:9",
+      "durationSeconds": 5,
+      "spokenSeconds": 3.407755102040816,
+      "image": "cards/sentence-002.png",
+      "audio": "audio/sentence-002.wav"
+    },
+    {
+      "index": 3,
+      "sentenceId": "cao-gui-003",
+      "text": "其乡人曰：“肉食者鄙，未能远谋。”",
+      "translation": "他的同乡说：“掌权的人目光短浅，不能作长远谋划。”",
+      "visualPrompt": "中国古代历史学习插图，乡人在村口劝曹刿不要入宫，水墨与暖色纸张质感，画面不生成文字，适合七至九年级学生，16:9",
+      "durationSeconds": 5.412834467120182,
+      "spokenSeconds": 4.912834467120182,
+      "image": "cards/sentence-003.png",
+      "audio": "audio/sentence-003.wav"
+    },
+    {
+      "index": 4,
+      "sentenceId": "cao-gui-004",
+      "text": "乃入见，问：“何以战？”",
+      "translation": "于是曹刿进宫拜见鲁庄公，问道：“您凭什么作战？”",
+      "visualPrompt": "中国古代历史学习插图，曹刿在宫中追问凭什么作战，水墨与暖色纸张质感，画面不生成文字，适合七至九年级学生，16:9",
+      "durationSeconds": 5,
+      "spokenSeconds": 3.694920634920635,
+      "image": "cards/sentence-004.png",
+      "audio": "audio/sentence-004.wav"
+    },
+    {
+      "index": 5,
+      "sentenceId": "cao-gui-005",
+      "text": "小大之狱，虽不能察，必以情。",
+      "translation": "大大小小的诉讼案件，即使不能一一明察，也一定根据实情处理。",
+      "visualPrompt": "中国古代历史学习插图，鲁庄公承诺按实情审理案件，水墨与暖色纸张质感，画面不生成文字，适合七至九年级学生，16:9",
+      "durationSeconds": 5.165759637188208,
+      "spokenSeconds": 4.665759637188208,
+      "image": "cards/sentence-005.png",
+      "audio": "audio/sentence-005.wav"
+    }
+  ]
+}

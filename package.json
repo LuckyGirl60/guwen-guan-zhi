@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "content:check": "node scripts/validate-content.mjs",
+    "media:generate": "node scripts/generate-media.mjs --article content/articles/cao-gui-lun-zhan.json",
+    "media:check": "node scripts/validate-media.mjs",
     "serve": "python -m http.server 4174"
   }
 }

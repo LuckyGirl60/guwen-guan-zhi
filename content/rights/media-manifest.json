@@ -9,11 +9,25 @@
       "notes": "不得使用机构课程截图、视频或讲义作为正式素材。"
     },
     {
+      "mediaId": "cao-gui-preview-video",
+      "licenseStatus": "prototype_only",
+      "source": "本地 Pillow、Windows System.Speech 与 FFmpeg",
+      "reviewedAt": "2026-10-26",
+      "notes": "仅用于产品原型验收，含系统合成语音和程序占位配乐，不作为正式课程素材。"
+    },
+    {
       "mediaId": "cao-gui-reading-audio",
       "licenseStatus": "browser_tts_fallback",
       "source": "浏览器 SpeechSynthesis",
       "reviewedAt": "2026-10-26",
       "notes": "合成语音不标记为真人朗读。"
+    },
+    {
+      "mediaId": "cao-gui-generated-audio",
+      "licenseStatus": "prototype_only",
+      "source": "Windows System.Speech",
+      "reviewedAt": "2026-10-26",
+      "notes": "逐句 WAV 只用于本地原型验收，正式发布前需人工校对并确认音色与授权。"
     }
   ]
 }
